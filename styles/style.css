@@ -1,0 +1,54 @@
+body {
+  background-color: rgb(5, 5, 15);
+}
+h1 {
+  font-size: 70px;
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "MORF" 15, "SHLN" 50;
+  text-align: center;
+  margin: 0;
+}
+.game {
+  background-color: black;
+  width: 700px;
+  height: 400px;
+  border-radius: 10%;
+}
+.boardGame {
+  background-color: rgb(5, 5, 15);
+  height: 390px;
+  width: 690px;
+  border-radius: 5%;
+  border: 2px solid white;
+ 
+  display: grid;
+  grid-template-columns: repeat(15, 25px) ;
+  grid-template-rows: 
+}
+.pMan {
+  width: 20px;
+  height: 20px;
+}
+.redGhost,
+.pinkGhost,
+.blueGhost {
+  width: 20px;
+  height: 20px;
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.score,
+.lifes,
+.rules {
+  background-color: rgb(0, 0, 0);
+  width: 80px;
+  height: 30px;
+  border: 3px solid rgb(117, 117, 117);
+  margin-top: 5px;
+}
