@@ -1,5 +1,7 @@
 body {
-  background-color: rgb(5, 5, 15);
+  background-color: rgb(5, 0, 36);
+  margin: 2% 25%;
+  color: white;
 }
 h1 {
   font-size: 70px;
@@ -18,15 +20,20 @@ h1 {
   border-radius: 10%;
 }
 .boardGame {
-  background-color: rgb(5, 5, 15);
+  background-color: rgb(18, 18, 59);
   height: 390px;
   width: 690px;
   border-radius: 5%;
   border: 2px solid white;
- 
   display: grid;
-  grid-template-columns: repeat(15, 25px) ;
-  grid-template-rows: 
+  grid-template-columns: repeat(19, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.murs{
+  
 }
 .pMan {
   width: 20px;
@@ -50,5 +57,7 @@ h1 {
   width: 80px;
   height: 30px;
   border: 3px solid rgb(117, 117, 117);
-  margin-top: 5px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
 }
