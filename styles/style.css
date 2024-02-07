@@ -44,9 +44,9 @@ h1 {
 
 .pMan {
   position: absolute;
-
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
 }
 .redGhost,
 .pinkGhost,

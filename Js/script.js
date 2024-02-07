@@ -1,3 +1,16 @@
+// function mur() {
+//   for (let d = 1; d < 21; d++) {
+//     let murs = document.querySelector(".murs");
+//     let div = document.createElement("div");
+//     div.setAttribute("class", "zMur" + d);
+//     murs.appendChild(div);
+//   }
+
+//   let murs = document.querySelector(".murs");
+//   murs.style.backgroundColor = "blue";
+// }
+// mur();
+
 let layout = [
   0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
 
@@ -20,26 +33,16 @@ let layout = [
   0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0,
 ];
 
-// function mur() {
-//   for (let d = 1; d < 21; d++) {
-//     let murs = document.querySelector(".murs");
-//     let div = document.createElement("div");
-//     div.setAttribute("class", "zMur" + d);
-//     murs.appendChild(div);
-//   }
+const grid = document.querySelector(".boardGame");
+const zones = [];
+const width = 19;
 
-//   let murs = document.querySelector(".murs");
-//   murs.style.backgroundColor = "blue";
-// }
-// mur();
-let grid = document.querySelector(".boardGame");
-let zones = [];
-let length = 20;
+
 
 function board() {
   for (let b = 0; b < layout.length; b++) {
     let zoneG = document.createElement("div");
-    zoneG.id = b;
+    zoneG.id = "p" + b;
     grid.appendChild(zoneG);
     zones.push(zoneG);
 
@@ -57,7 +60,68 @@ function board() {
 board();
 
 
+
+
+
+let score = document.querySelector(".score");
+
+
+
+class Ghosts {
+  constructor(positionG, speed) {
+    this.positionG = positionG;
+    this.speed = speed;
+  }
+}
+
+class PacMan {
+  constructor(positionP, food) {
+    this.positionP = positionP;
+    this.lifes = lifes;
+    this.food = food;
+    this.movePacman();
+  
+  }
+ 
+
+}
+
 let pMan = document.querySelector(".pMan");
+// let pManStatPosition = 103
+// zones[pManStatPosition].classList.add("pMan")
 
 
-// function pacmanMove() {}
+// function movePacman(move) {  
+  
+//     if(
+      
+//     )
+// }
+
+
+
+// document.addEventListener('keydown',function(event){
+// if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)){
+
+// }
+// })
+
+
+
+class Lifes extends PacMan{
+  constructor(positionP,food,nbLifes){
+    super(positionP, food, nbLifes);
+    this.nbLifes = nbLifes;
+  }
+}
+ 
+
+class Score {
+  constructor(compteur){
+    this.compteur = compteur
+  }
+}
+  
+  
+
+
