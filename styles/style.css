@@ -23,25 +23,35 @@ h1 {
   background-color: rgb(18, 18, 59);
   height: 390px;
   width: 690px;
-  border-radius: 5%;
-  border: 2px solid white;
+  border-radius: 20px;
+  border: 10px solid blue;
   display: grid;
   grid-template-columns: repeat(19, 1fr);
-  grid-template-rows: repeat(11, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
-
-.murs{
-  
+.candy {
+  width: 5px;
+  height: 5px;
+  background-color: blue;
+  transform: translateX(15px) translateY(15px);
 }
+
+.wall {
+  background-color: blue;
+}
+
 .pMan {
+  position: absolute;
+
   width: 20px;
   height: 20px;
 }
 .redGhost,
 .pinkGhost,
 .blueGhost {
+  position: absolute;
   width: 20px;
   height: 20px;
 }
