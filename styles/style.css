@@ -41,20 +41,15 @@ h1 {
 .wall {
   background-color: blue;
 }
-
+.ghosts {
+  background-image: url(../images/fantomeRose.svg);
+  background-size: cover;
+}
 .pMan {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  z-index: 1;
+background-image: url(../images/Pacman.svg);
+background-size: cover;
 }
-.redGhost,
-.pinkGhost,
-.blueGhost {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-}
+
 .info {
   display: flex;
   flex-direction: row;
