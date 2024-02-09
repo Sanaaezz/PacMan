@@ -3,30 +3,34 @@ import Ghosts from "./ghosts.js";
 import PacMan from "./persoPacMan.js";
 
 let layout = [
-  0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
-  0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0,
+  1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1,
 
-  0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0,
+  1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1,
 
-  0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0,
+  1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1,
 
-  0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0,
+  1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1,
 
-  0, 1, 0, 0, 0, 1, 0, 2, 2, 3, 2, 2, 0, 1, 0, 0, 0, 1, 0,
+  1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1,
 
-  0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0,
+  1, 0, 1, 0, 0, 0, 1, 0, 2, 2, 3, 2, 2, 0, 1, 0, 0, 0, 1, 0, 1,
 
-  0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0,
+  1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1,
 
-  0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0,
+  1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1,
 
-  0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0,
+  1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1,
+
+  1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1,
+
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 ];
 
 const grid = document.querySelector(".boardGame");
 const zones = [];
-const width = 19;
+// const width = 19;
 // zones.push(new PacMan());
 
 function board() {
@@ -51,7 +55,75 @@ function board() {
   }
 }
 board();
+ window.addEventListener("keydown", function (event) {
+      console.log(event.code);
+      if (event.code == "ArrowUp") {
+        console.log("test");
+        for (let i = 0; i < layout.length; i++) {
+          let j = i - 21;
+          if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
+            zones[i].classList.remove("pMan");
+            zones[j].classList.remove("candy");
+            zones[j].classList.add("pMan");
 
+            layout[i] = 0;
+            layout[j] = 3;
+            break;
+          }
+        }
+      } else if (event.code == "ArrowDown") {
+        for (let i = 0; i < layout.length; i++) {
+          let j = i + 21;
+          if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
+            zones[i].classList.remove("pMan");
+            zones[j].classList.remove("candy");
+            zones[j].classList.add("pMan");
+
+            layout[i] = 0;
+            layout[j] = 3;
+            break;
+          }
+        }
+      } else if (event.code == "ArrowLeft") {
+        for (let i = 0; i < layout.length; i++) {
+          let j = i - 1;
+          if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
+            zones[i].classList.remove("pMan");
+            zones[j].classList.remove("candy");
+            zones[j].classList.add("pMan");
+
+            layout[i] = 0;
+            layout[j] = 3;
+            break;
+          }
+        }
+      } else {
+        event.code == "ArrowRight";
+        for (let i = 0; i < layout.length; i++) {
+          let j = i + 1;
+
+          if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
+            console.log(i);
+            console.log(j);
+
+            zones[i].classList.remove("pMan");
+            zones[j].classList.remove("candy");
+            zones[j].classList.add("pMan");
+
+            layout[i] = 0;
+            layout[j] = 3;
+            break;
+          }
+        }
+      }
+    });
+ let start = document.boardGame.createElement("div")
+ start.classList.add("start")
+
+
+ window.document.addEventListener("click", () => {
+
+ });
 // let pManStatPosition = 103
 // zones[pManStatPosition].classList.add("pMan")
 
@@ -61,61 +133,6 @@ board();
 
 //     )
 // }
-
-window.addEventListener("keydown", function (event) {
-  console.log(event.code);
-  if (event.code == "ArrowUp") {
-    console.log("test");
-    for (let i = 0; i < layout.length; i++) {
-      let j = i - 19;
-      if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
-        zones[i].classList.remove("pMan");
-        zones[j].classList.remove("candy");
-        zones[j].classList.add("pMan");
-
-        layout[i] = 0;
-        layout[j] = 3;
-      }
-    }
-  } else if (event.code == "ArrowDown") {
-    for (let i = 0; i < layout.length; i++) {
-      let j = i + 19;
-      if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
-        zones[i].classList.remove("pMan");
-        zones[j].classList.remove("candy");
-        zones[j].classList.add("pMan");
-
-        layout[i] = 0;
-        layout[j] = 3;
-      }
-    }
-  } else if (event.code == "ArrowLeft") {
-    for (let i = 0; i < layout.length; i++) {
-      let j = i - 1;
-      if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
-        zones[i].classList.remove("pMan");
-        zones[j].classList.remove("candy");
-        zones[j].classList.add("pMan");
-
-        layout[i] = 0;
-        layout[j] = 3;
-      }
-    }
-  } else {
-    event.code == "ArrowRight";
-    for (let i = 0; i < layout.length; i++) {
-      let j = i + 1;
-      if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
-        zones[i].classList.remove("pMan");
-        zones[j].classList.remove("candy");
-        zones[j].classList.add("pMan");
-
-        layout[i] = 0;
-        layout[j] = 3;
-      }
-    }
-  }
-});
 
 // function mur() {
 //   for (let d = 1; d < 21; d++) {
