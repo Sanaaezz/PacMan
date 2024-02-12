@@ -1,6 +1,5 @@
-import Score from "./score.js";
+// import Score from "./score.js";
 import Ghosts from "./ghosts.js";
-import PacMan from "./persoPacMan.js";
 
 let layout = [
   1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -55,10 +54,13 @@ function board() {
   }
 }
 board();
+
+
+
+// Mouvement PacMan
  window.addEventListener("keydown", function (event) {
-      console.log(event.code);
+      // console.log(event.code);
       if (event.code == "ArrowUp") {
-        console.log("test");
         for (let i = 0; i < layout.length; i++) {
           let j = i - 21;
           if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
@@ -74,7 +76,7 @@ board();
       } else if (event.code == "ArrowDown") {
         for (let i = 0; i < layout.length; i++) {
           let j = i + 21;
-          if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
+          if (layout[i] === 3 && layout[j] !== 1 /*&& layout[j] !== 2*/) {
             zones[i].classList.remove("pMan");
             zones[j].classList.remove("candy");
             zones[j].classList.add("pMan");
@@ -87,7 +89,23 @@ board();
       } else if (event.code == "ArrowLeft") {
         for (let i = 0; i < layout.length; i++) {
           let j = i - 1;
-          if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
+          if (layout[i] === 3 && layout[j] !== 1 /*&& layout[j] !== 2*/) {
+            zones[i].classList.remove("pMan");
+            zones[j].classList.remove("candy");
+            zones[j].classList.add("pMan");
+
+            layout[i] = 0;
+            layout[j] = 3;
+            break;
+          }
+        }
+      } else if ( event.code == "ArrowRight"){
+        for (let i = 0; i < layout.length; i++) {
+          let j = i + 1;
+
+          if (layout[i] === 3 && layout[j] !== 1 /*&& layout[j] !== 2*/) {
+           
+
             zones[i].classList.remove("pMan");
             zones[j].classList.remove("candy");
             zones[j].classList.add("pMan");
@@ -98,32 +116,29 @@ board();
           }
         }
       } else {
-        event.code == "ArrowRight";
-        for (let i = 0; i < layout.length; i++) {
-          let j = i + 1;
-
-          if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
-            console.log(i);
+          for (let i = 0; i < layout.length; i++) { 
+          
+        let j = i +1 ;
+        if ( layout[i] === 3 && layout[j] === 2 ) {
+           console.log(i);
             console.log(j);
-
+            window.alert("GameOver");
             zones[i].classList.remove("pMan");
-            zones[j].classList.remove("candy");
-            zones[j].classList.add("pMan");
-
-            layout[i] = 0;
-            layout[j] = 3;
+            zones[j].classList.remove("ghost");
+            zones[i].classList.add(this.window.alert("GameOver"));
             break;
-          }
-        }
+        }}
       }
     });
- let start = document.boardGame.createElement("div")
- start.classList.add("start")
+
+    
+//  let start = document.boardGame.createElement("div")
+//  start.classList.add("start")
 
 
- window.document.addEventListener("click", () => {
+//  window.document.addEventListener("click", () => {
 
- });
+//  });
 // let pManStatPosition = 103
 // zones[pManStatPosition].classList.add("pMan")
 

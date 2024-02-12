@@ -1,9 +1,9 @@
-export default class PacMan {
-  constructor(id, positionP = 104) {
+// export default class PacMan {
+//   constructor(id, positionP = 104) {
   
-    this.id = id;
-    this.positionP = positionP;
+//     this.id = id;
+//     this.positionP = positionP;
 
 
 
-}}
+// }}
