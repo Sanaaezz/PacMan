@@ -15,21 +15,28 @@ export default class Ghosts {
     this.id = id;
   }
 
+  get positionG(){
+    return this.positionG;
+  }
+
+  set positionG(positionG){
+    this.positionG = this.positionG;
+  }
 
 
      moveGhost() {
-        const directions = [-1, 1, width, -width]
-        let direction = directions[Math.floor(Math.random() * directions.length)]
+        // const directions = [-1, 1, width, -width]
+        // let direction = directions[Math.floor(Math.random() * directions.length)]
 
       
-            if (
-                !zones[this.positionG + direction].classList.contains("ghost") &&
-                !zones[this.positionG + direction].classList.contains("wall")
-            ) {
-                zones[this.positionG].classList.remove("ghost")
-                this.positionG += direction
-                squares[this.positionG].classList.add("ghost")
-            } else {direction = directions[Math.floor(Math.random() * directions.length)]
+        //     if (
+        //         !zones[this.positionG + direction].classList.contains("ghost") &&
+        //         !zones[this.positionG + direction].classList.contains("wall")
+        //     ) {
+        //         zones[this.positionG].classList.remove("ghost")
+        //         this.positionG += direction
+        //         zones[this.positionG].classList.add("ghost")
+        //     } else {direction = directions[Math.floor(Math.random() * directions.length)]
            
           
             }

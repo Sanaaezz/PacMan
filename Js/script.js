@@ -55,86 +55,102 @@ function board() {
 }
 board();
 
-
-
 // Mouvement PacMan
- window.addEventListener("keydown", function (event) {
-      // console.log(event.code);
-      if (event.code == "ArrowUp") {
-        for (let i = 0; i < layout.length; i++) {
-          let j = i - 21;
-          if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
-            zones[i].classList.remove("pMan");
-            zones[j].classList.remove("candy");
-            zones[j].classList.add("pMan");
+window.addEventListener("keydown", function (event) {
+  // console.log(event.code);
+  if (event.code == "ArrowUp") {
+    for (let i = 0; i < layout.length; i++) {
+      let j = i - 21;
+      if (layout[i] === 3 && layout[j] !== 1 && layout[j] !== 2) {
+        zones[i].classList.remove("pMan");
+        zones[j].classList.remove("candy");
+        zones[j].classList.add("pMan");
 
-            layout[i] = 0;
-            layout[j] = 3;
-            break;
-          }
-        }
-      } else if (event.code == "ArrowDown") {
-        for (let i = 0; i < layout.length; i++) {
-          let j = i + 21;
-          if (layout[i] === 3 && layout[j] !== 1 /*&& layout[j] !== 2*/) {
-            zones[i].classList.remove("pMan");
-            zones[j].classList.remove("candy");
-            zones[j].classList.add("pMan");
-
-            layout[i] = 0;
-            layout[j] = 3;
-            break;
-          }
-        }
-      } else if (event.code == "ArrowLeft") {
-        for (let i = 0; i < layout.length; i++) {
-          let j = i - 1;
-          if (layout[i] === 3 && layout[j] !== 1 /*&& layout[j] !== 2*/) {
-            zones[i].classList.remove("pMan");
-            zones[j].classList.remove("candy");
-            zones[j].classList.add("pMan");
-
-            layout[i] = 0;
-            layout[j] = 3;
-            break;
-          }
-        }
-      } else if ( event.code == "ArrowRight"){
-        for (let i = 0; i < layout.length; i++) {
-          let j = i + 1;
-
-          if (layout[i] === 3 && layout[j] !== 1 /*&& layout[j] !== 2*/) {
-           
-
-            zones[i].classList.remove("pMan");
-            zones[j].classList.remove("candy");
-            zones[j].classList.add("pMan");
-
-            layout[i] = 0;
-            layout[j] = 3;
-            break;
-          }
-        }
-      } else {
-          for (let i = 0; i < layout.length; i++) { 
-          
-        let j = i +1 ;
-        if ( layout[i] === 3 && layout[j] === 2 ) {
-           console.log(i);
-            console.log(j);
-            window.alert("GameOver");
-            zones[i].classList.remove("pMan");
-            zones[j].classList.remove("ghost");
-            zones[i].classList.add(this.window.alert("GameOver"));
-            break;
-        }}
+        layout[i] = 0;
+        layout[j] = 3;
+        break;
       }
-    });
+    }
+  } else if (event.code == "ArrowDown") {
+    for (let i = 0; i < layout.length; i++) {
+      let j = i + 21;
+      if (layout[i] === 3 && layout[j] !== 1 /*&& layout[j] !== 2*/) {
+        zones[i].classList.remove("pMan");
+        zones[j].classList.remove("candy");
+        zones[j].classList.add("pMan");
 
-    
+        layout[i] = 0;
+        layout[j] = 3;
+        break;
+      }
+    }
+  } else if (event.code == "ArrowLeft") {
+    for (let i = 0; i < layout.length; i++) {
+      let j = i - 1;
+      if (layout[i] === 3 && layout[j] !== 1 /*&& layout[j] !== 2*/) {
+        zones[i].classList.remove("pMan");
+        zones[j].classList.remove("candy");
+        zones[j].classList.add("pMan");
+
+        layout[i] = 0;
+        layout[j] = 3;
+        break;
+      }
+    }
+  } else if (event.code == "ArrowRight") {
+    for (let i = 0; i < layout.length; i++) {
+      let j = i + 1;
+
+      if (layout[i] === 3 && layout[j] !== 1 /*&& layout[j] !== 2*/) {
+        zones[i].classList.remove("pMan");
+        zones[j].classList.remove("candy");
+        zones[j].classList.add("pMan");
+
+        layout[i] = 0;
+        layout[j] = 3;
+        break;
+      }
+    }
+  } else {
+    for (let i = 0; i < layout.length; i++) {
+      let j = i + 1;
+      if (layout[i] === 3 && layout[j] === 2) {
+        console.log(i);
+        console.log(j);
+        window.alert("GameOver");
+        zones[i].classList.remove("pMan");
+        zones[j].classList.remove("ghost");
+        zones[i].classList.add(this.window.alert("GameOver"));
+        break;
+      }
+    }
+  }
+});
+
+function Candy() {
+  let compteurScore = document.querySelector(".score");
+  let candy = document.querySelector(".candy");
+  let score = 0;
+for (score = 0;){
+
+}
+}
+Candy();
+compteurScore.textContent = Candy().value
+
+console.log(Candy())
+
+// if (zones[c].classList.contains("candy")) {
+//   score++;
+//   compteurScore.innerHTML = score;
+//   zones[c].classList.remove("candy");
+// }
+
+
+
+
 //  let start = document.boardGame.createElement("div")
 //  start.classList.add("start")
-
 
 //  window.document.addEventListener("click", () => {
 
