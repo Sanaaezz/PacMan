@@ -29,8 +29,8 @@ let layout = [
 
 const grid = document.querySelector(".boardGame");
 const zones = [];
-// const width = 19;
-// zones.push(new PacMan());
+const width = 21;
+
 
 function board() {
   for (let i = 0; i < layout.length; i++) {
@@ -113,7 +113,7 @@ window.addEventListener("keydown", function (event) {
     }
   } else {
     for (let i = 0; i < layout.length; i++) {
-      let j = i + 1;
+      let j = i ++;
       if (layout[i] === 3 && layout[j] === 2) {
         console.log(i);
         console.log(j);
@@ -131,12 +131,10 @@ function Candy() {
   let compteurScore = document.querySelector(".score");
   let candy = document.querySelector(".candy");
   let score = 0;
-for (score = 0;){
 
 }
-}
 Candy();
-compteurScore.textContent = Candy().value
+compteurScore.textContent = ("Score");
 
 console.log(Candy())
 
