@@ -31,9 +31,8 @@ h1 {
   grid-template-rows: repeat(12, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  
 }
-.candy{
+.candy {
   width: 5px;
   height: 5px;
   background-color: blue;
@@ -45,11 +44,11 @@ h1 {
 }
 .ghosts {
   background-image: url(../images/fantomeRose.svg);
-  background-size:cover;
+  background-size: cover;
 }
 .pMan {
-background-image: url(../images/Pacman.svg);
-background-size: cover;
+  background-image: url(../images/Pacman.svg);
+  background-size: cover;
 }
 
 .info {
@@ -67,4 +66,28 @@ background-size: cover;
   margin-top: 10px;
   display: flex;
   justify-content: space-around;
+}
+
+.rulesBtn {
+  background-color: black;
+  color: white;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.modalContainer {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+}
+.modalContainer.active{
+  visibility: visible;
+ 
+}
+.modal {
+  margin-top: 550px;
+  position: absolute;
+  
 }

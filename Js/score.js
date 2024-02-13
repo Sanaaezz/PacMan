@@ -2,6 +2,10 @@ export default class Score {
   constructor(compteur) {
     this.compteur = compteur;
   }
+
+
+
+  
   //developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
   //   function Compteur() {
