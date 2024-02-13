@@ -1,5 +1,5 @@
 // import Score from "./score.js";
-import Ghosts from "./ghosts.js";
+import Ghost from "./ghosts.js";
 
 let layout = [
   1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -29,7 +29,8 @@ let layout = [
 
 const grid = document.querySelector(".boardGame");
 const zones = [];
-const width = 21;
+
+
 
 
 function board() {
@@ -110,68 +111,92 @@ window.addEventListener("keydown", function (event) {
         layout[j] = 3;
         break;
       }
+    
     }
-  } else {
+  }
+  GameOver();
+  let victoire = document.querySelectorAll('.candy')
+  if (victoire.length == 110) {
+    alert("gagner");
+  }
+  console.log(victoire);
+});
+
+
+
+function RDMdirection(){
+  return Math.floor(Math.random()*3)
+}
+setInterval(() => {
+
+  if (RDMdirection() == 0) {
+    console.log(RDMdirection());
     for (let i = 0; i < layout.length; i++) {
-      let j = i ++;
-      if (layout[i] === 3 && layout[j] === 2) {
-        console.log(i);
-        console.log(j);
-        window.alert("GameOver");
-        zones[i].classList.remove("pMan");
-        zones[j].classList.remove("ghost");
-        zones[i].classList.add(this.window.alert("GameOver"));
+      let j = i - 21;
+      if (layout[i] === 2 && layout[j] !== 1 && layout[j] !==3) {
+        zones[i].classList.remove("ghosts");
+        zones[i].classList.add("candy");
+        zones[j].classList.remove("candy");
+        zones[j].classList.add("ghosts");
+        layout[i] = 0;
+        layout[j] = 2;
         break;
       }
     }
+  } else if (RDMdirection() == 1) {
+    for (let i = 0; i < layout.length; i++) {
+      let j = i + 21;
+      if (layout[i] === 2 && layout[j] !== 1 && layout[j] !==3) {
+        zones[i].classList.remove("ghosts");
+         zones[i].classList.add("candy");
+        zones[j].classList.remove("candy");
+        zones[j].classList.add("ghosts");
+        layout[i] = 0;
+        layout[j] = 2;
+           break;
+      }
+    }
+  } else if (RDMdirection() == 2) {
+    for (let i = 0; i < layout.length; i++) {
+      let j = i - 1;
+      if (layout[i] === 2 && layout[j] !== 1 && layout[j] !==3) {
+        zones[i].classList.remove("ghosts");
+         zones[i].classList.add("candy");
+        zones[j].classList.remove("candy");
+        zones[j].classList.add("ghosts");
+        layout[i] = 0;
+        layout[j] = 2;
+           break;
+      }
+    }
+  } else if (RDMdirection() == 3) {
+    for (let i = 0; i < layout.length; i++) {
+      let j = i + 1;
+
+      if (layout[i] === 2 && layout[j] !== 1 && layout[j] !==3) {
+        zones[i].classList.remove("ghosts");
+         zones[i].classList.add("candy");
+        zones[j].classList.remove("candy");
+        zones[j].classList.add("ghosts");
+        layout[i] = 0;
+        layout[j] = 2;
+           break; 
+      }
+    }
   }
-});
+} , 500)
+console.log();
 
-function Candy() {
-  let compteurScore = document.querySelector(".score");
-  let candy = document.querySelector(".candy");
-  let score = 0;
+function GameOver(){
 
-}
-Candy();
-compteurScore.textContent = ("Score");
+  if (document.querySelector(".pMan").classList.contains("ghosts") ){
+   window.alert("GameOver");
+  }
 
-console.log(Candy())
-
-// if (zones[c].classList.contains("candy")) {
-//   score++;
-//   compteurScore.innerHTML = score;
-//   zones[c].classList.remove("candy");
-// }
+};
 
 
 
 
-//  let start = document.boardGame.createElement("div")
-//  start.classList.add("start")
 
-//  window.document.addEventListener("click", () => {
 
-//  });
-// let pManStatPosition = 103
-// zones[pManStatPosition].classList.add("pMan")
-
-// function movePacman(move) {
-
-//     if(
-
-//     )
-// }
-
-// function mur() {
-//   for (let d = 1; d < 21; d++) {
-//     let murs = document.querySelector(".murs");
-//     let div = document.createElement("div");
-//     div.setAttribute("class", "zMur" + d);
-//     murs.appendChild(div);
-//   }
-
-//   let murs = document.querySelector(".murs");
-//   murs.style.backgroundColor = "blue";
-// }
-// mur();

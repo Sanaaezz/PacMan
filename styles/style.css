@@ -33,7 +33,7 @@ h1 {
   grid-row-gap: 0px;
   
 }
-.candy {
+.candy{
   width: 5px;
   height: 5px;
   background-color: blue;
@@ -45,7 +45,7 @@ h1 {
 }
 .ghosts {
   background-image: url(../images/fantomeRose.svg);
-  background-size: cover;
+  background-size:cover;
 }
 .pMan {
 background-image: url(../images/Pacman.svg);

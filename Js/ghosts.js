@@ -1,89 +1,53 @@
-export default class Ghosts {
-  constructor(id, positionG) {
-    this.id = id;
-    this.positionG = positionG;
-    this.IdAleatoire();
-    this.board();
-    //   this.moveGhosts();
-
+export default class Ghost {
+  constructor(className, startIndex) {
+    this.className = className;
+    this.startIndex = startIndex;
+ 
   }
-
-  get id() {
-    return this.IdAleatoire;
-  }
-  set id(id) {
-    this.id = id;
-  }
-
-  get positionG(){
-    return this.positionG;
-  }
-
-  set positionG(positionG){
-    this.positionG = this.positionG;
-  }
+}
+// const ghosts = [
+//   new Ghost("ghost1", 134),
+//   new Ghost("ghost2", 135),
+//   new Ghost("ghost3", 137),
+//   new Ghost("ghost4", 138),
+// ]
 
 
-     moveGhost() {
-        // const directions = [-1, 1, width, - width]
-        // let direction = directions[Math.floor(Math.random() * directions.length)]
 
-      
-        //     if (
-        //         !zones[this.positionG + direction].classList.contains("ghost") &&
-        //         !zones[this.positionG + direction].classList.contains("wall")
-        //     ) {
-        //         zones[this.positionG].classList.remove("ghost")
-        //         this.positionG += direction
-        //         zones[this.positionG].classList.add("ghost")
-        //     } else {direction = directions[Math.floor(Math.random() * directions.length)]
-           
-          
-            }
 
-   
-       
-    }
-//     Ghosts.forEach(() => {
-//       zones[this.positionG].classList.add("ghosts");
-//     });
-//     //   // document.querySelector(".ghosts")
-//     for (let i = 0; i < layout.lenght; i++) {
-//       let j = this.IdAleatoire();
-//       if (layout[i] === 2 && layout[i] !== 1)
-//         zones[i].classList.remove("ghosts");
-//       zones[j].classList.add("ghosts");
+// const zones = [];
+// const width = 21;
 
-//       layout[i] = 0;
-//       layout[j] = 2;
-//       break;
+
+// ghosts.forEach((ghost) => {
+//   zones[ghost.startIndex].classList.add(ghost.className);
+//   zones[ghost.currentIndex].classList.add("ghost");
+// });
+
+// ghosts.forEach((ghost) => moveGhost(ghost));
+
+// function moveGhost(ghost) {
+//   const directions = [-1, 1, 21, -21];
+//   let direction = directions[Math.floor(Math.random() * directions.length)];
+
+//   ghost.startIndex = setInterval(function () {
+//     if (
+//       !zones[ghosts.currentIndex + direction].classList.contains("ghost") &&
+//       !zones[ghosts.currentIndex + direction].classList.contains("wall")
+//     ) {
+//       zones[ghost.currentIndex].classList.remove(ghost.className, "ghost");
+//       ghost.currentIndex += direction;
+//       zones[ghost.currentIndex].classList.add(ghost.className, "ghost");
+//     } else direction = directions[Math.floor(Math.random() * directions.length)];
+
+//     if (zones[ghost.currentIndex].classList.contains("pac-man")) {
+//       zones[ghost.currentIndex].classList.remove(ghost.className, "ghost");
+//       ghost.currentIndex = ghost.startIndex;
+//       score += 100;
+//       scoreDisplay.innerHTML = score;
+//       zones[ghost.currentIndex].classList.add(ghost.className, "ghost");
 //     }
-//   }
-
-//   IdAleatoire() {
-//     Math.floor(Math.random() .layout.lenght);
-//   }
-
-
+//   }, 1000);
 // }
-
-  // zones.push(new Ghosts());
-  // zones.push(new Ghosts());
-  // zones.push(new Ghosts());
-  // zones.push(new Ghosts());
-
-
-
-
-// //   let ghost1 = document.createElement("ghost");
-// //   ghost1.classList.add("ghost1");
-
-// //   let ghost2 = document.createElement("ghost");
-// //   ghost2.classList.add("ghost2");
-
-// //   let ghost3 = document.createElement("ghost");
-// //   ghost3.classList.add("ghost3");
-
-// //   let ghost4 = document.createElement("ghost");
-// //   ghost4.classList.add("ghost4");
-// // }
+// moveGhost();
+// console.log(moveGhost());
