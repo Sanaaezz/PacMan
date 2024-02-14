@@ -181,7 +181,7 @@ setInterval(() => {
       }
     }
   }
-}, 200);
+}, 100);
 console.log();
 
 function GameOver() {
@@ -201,7 +201,7 @@ function Win() {
 function ScoreC() {
   let victoire = document.querySelectorAll(".candy");
   const scoreDisplay = document.querySelector(".score");
-  let score = 125 - victoire.length;
+  let score = 200 - victoire.length;
   scoreDisplay.innerHTML = score;
 }
 // Score
