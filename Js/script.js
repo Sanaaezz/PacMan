@@ -117,7 +117,7 @@ window.addEventListener("keydown", function (event) {
   }
   GameOver();
   Win();
-  //  ScoreC();
+  ScoreC();
 });
 
 //  Mouvement des fantomes
@@ -198,10 +198,16 @@ function Win() {
   // console.log(victoire);
 }
 
+function ScoreC() {
+  let victoire = document.querySelectorAll(".candy");
+  const scoreDisplay = document.querySelector(".score");
+  let score = 125 - victoire.length;
+  scoreDisplay.innerHTML = score;
+}
 // Score
 //
 // function ScoreC() {
-//   const scoreDisplay = document.querySelector(".score");
+//
 //   let candys = document.querySelectorAll(".candy");
 //   let score = 0;
 // for (let i = 0; i < layout.length; i++){
