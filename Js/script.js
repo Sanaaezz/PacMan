@@ -201,7 +201,7 @@ function Win() {
 function ScoreC() {
   let victoire = document.querySelectorAll(".candy");
   const scoreDisplay = document.querySelector(".score");
-  let score = 200 - victoire.length;
+  let score = 265 - victoire.length;
   scoreDisplay.innerHTML = score;
 }
 // Score
